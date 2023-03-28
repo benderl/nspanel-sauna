@@ -193,7 +193,7 @@ class Nextion : Driver
                             if msg == bytes('000000FFFFFF88FFFFFF')
                                 self.screeninit()
                             elif msg[0]==0x7B  # JSON, starting with "{"
-                                var jm = string.format("%s",msg[0..-1].asstring())
+                                var jm = string.format("{\"NextionReceived\":%s}",msg[0..-1].asstring())
                                 tasmota.publish_result(jm, "RESULT")
                             elif size(msg)>=2 && msg[0]==0x55 && msg[1]==0xBB
                                 var jm = string.format("{\"CustomRecv\":\"%s\"}",msg[4..-3].asstring())

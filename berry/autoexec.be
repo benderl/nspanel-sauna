@@ -1,1 +1,2 @@
-load("sauna-panel.be")
+load("lovelace.be")
+load("thermostat.be")
